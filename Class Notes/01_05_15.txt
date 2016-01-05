@@ -1,0 +1,48 @@
+01_05_15
+
+Computer Networks - 146
+2 Exams - MT, Final, ~35% each, 30% quizzes
+
+Textbook: peterson & davie
+Attendance: Required
+
+Sattelites/Communication
+	-Radio waves, attenuate
+	-1st sattelite communication device
+		-want to transmit over the horizon
+		-The moon - bounce radio signal off of the moon
+
+Bandwidth
+	-Faster in what sense?
+	-amount per unit time
+
+Latency
+	-time it takes for signal to reach destination
+
+Speed Protocol
+
+Wire network
+	-n(n-1) connections - each talk to one individually
+	-use a central operator
+
+Mediums
+	-Broadcast communication, signal loss'
+
+Send/Receive Data to party w/o fixed location
+
+
+Subsets of tasks
+Protocol
+Interfaces
+Service Primitive
+	-communicate with a different layer (above or below)
+
+Reference Models ISO - OSI
+	-Application protocol, presentation protocol, session protocol, transport protocol
+	-TELNET, FTP, SMTP, DNS -> application
+
+Bad Timing
+	-the apocalypse of the two eelephants
+	-2 periods of activity
+
+Lab - no lab 1st week
