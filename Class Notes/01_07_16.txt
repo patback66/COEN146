@@ -1,0 +1,118 @@
+01_07_16
+
+Networks - communication
+
+How to buffer data
+
+Latency	-	the time between starting to send the data and the data starting to be received
+		-	time in flight
+
+Bandwidth - how much data is moving with respect to unit time
+
+Client 	-	intitiates the communication
+		-	
+
+
+Server	-	known point of contact
+		-	many-to-one
+		-	where the data is stored and distributed from
+
+Home Network Applications
+	-	Video streaming service: everybody is a server and a client
+	-	Server - need to know who to talk to
+		-1) ask me for movies
+		-2) ask me where to find the movies
+	-	How many messages need to be sent?
+	-	Terms
+
+Mobile Network Users
+	-	IP Changes
+	-	Must support mobility of the machine
+	-	Wireless but not mobile
+
+Network Hardware
+	-	different levels
+	-	network of networks
+	-	Local Area Networks, Metropolitan Area Networks, Wide Area Networks, Wireless Network, Home Network, Internetworks
+
+Broadcast Newtorks
+	-	Broadcast links
+		-	tell everybody
+	-	Point-to-Point links
+
+Local Area Networks
+	-	Bus
+		-	everybody hears and interprets at about the same time
+		-	6-way stop sign
+	-	Ring 
+		-	has extra delay - must be heard, interpreted, and passed
+		-	roundabout
+	-	Media access control
+
+Metropolitan Area networks
+
+Wide Area Networks
+	-	Geographical distance may incur more latency
+	-	Subnets, routers link LANS
+	-	Subnet - subcomponent of a larger network
+	-	Router - sends data, evaluates best path
+			   - forwards packets to proper path
+	-	Packet - fixed size chunk of data sent at layer 3 (of layer stack) - link layer
+
+Home Network Categories
+
+Network Software
+	-	Protocol Hierarchies
+
+Protocol Hierarchies
+	-	Flow supporting virtual communications in layers
+	-	Data may have to be broken into smaller chunks
+	-	may need to worry about ordering and sequencing of packets
+	-	headers
+	-	layer 3 now has to care about addressing of physical machines
+	- 	layer 4 - transport layer 
+	-	many small frames vs one big frame with many packages
+		-	depends on how you're transmitting the data
+
+Design Issues for the Layers
+	-	Addressing
+	-	Error Control
+	-	Flow Control
+	-	Multiplexing
+	-	Routing
+
+Connection-Oriented and Connnectionless Services
+	-	Could senda a Byte stream
+		-	Connection Oriented
+	-	Connectionless
+		-	send chunks, say this message is for x
+
+Service Primitives
+	-	Packets sent in a simple client-server interaction on a connection-oriented network
+	-	Protocol Stack
+		-	Each layer has certain responsibilities for each comunication
+		-	Assumes the person on the other end follows the same protocol
+
+Reference Models
+	-	transport layer gets the data to individual process
+	-	
+	-	data link gets clearly defined chunk to destination
+	-	physical - what does a bit look like
+	-	session - establishing connections
+	-	OSI vs TCP/IP
+		-	OSI - 7 layers
+		-	TCP/IP - ~4 layers
+
+Critique of the OSI Model and Protocols
+	-	too early
+
+Hybrid Model
+	-	Physical, Data link, network, transport, application
+
+Example Networks
+	-	The internet
+	-	Connection-Oriented Networks: X.25, Frame Relay, ATM
+	-	Ethernet
+	-	Wireless LANs: 802:11
+
+	Arpanet: switching network of connections - avoid star model
