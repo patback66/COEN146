@@ -1,0 +1,89 @@
+01_12_16
+
+The Internet = "A series of tubes"?
+
+Bandwidth	-	data transmitted per time unit - rate of flow of volume of data
+Latency		-	time between package sent and packet acknowledged
+			-	propagation delay + other times (reciver queue time)
+			-	data processing on the receiving end
+			-	there can also be quueuing time on transmitter
+			-	transmitter queue time + encoding + propagation delay/time + receiver queue time + decoding
+Propagation Delay/time 		-	time it takes for a signal to get to final recipient point
+
+Channel Capacity	-	Bandwidth * latency
+
+Performance
+	-	transmit = size/bandwidth
+	-	propagation = distance/speed of light
+	-	latency = propagation + transmit + queue
+
+	-	one bit transmissino -> propagation is important
+	-	large bytes transmission -> bandwidth is important
+	-	Best network? depends on how much data you need to move
+
+Delay X Bandwidth
+	-	We think the channel between a pair of processes as a hollow pipe
+
+RTT	-	Round-trip time	
+
+Bandwidth-Limited Signals
+	-	add harmonics - more frequency, more bandwidth
+
+Links
+	-	-Plog2(P)
+		-	P is a probability
+		-	Get a value that is large when unlikely, small when common
+	sum(-Pilog2(Pi), 0, i)
+		-	how many bits required to describe all events
+
+Link Capacity and Shannon-Hartley Theorem
+	-	C=Blog2(1+S/N)
+		-	log2 -> binary
+		-	B = bandwidth, #changes/sec
+
+Modulation	-	
+
+What can you change about a signal?
+	-	Frequency
+	-	Amplitude
+	-	Phase
+
+	-	QPSK - phase manipulation, 4 possible values
+		-	quadrature phase shift keying
+	-	QAM	- phase + amplitude
+		-	quadrature phase shift keying with amplitude modulation at (16/64)
+	-	Phone line limits
+		-	33.6 Kbps (kilobits per second) NOT BYTES
+		-	from 3000Hz
+			-	comes from your voice
+	-	But wires can cause emf
+		-	twist the wires
+		-	Cat3 - 3 twists per unit length
+		-	Cat5 - 5
+		-	Guided signal, less interference
+		-	prevents from acting like an antenna
+		-	longer wires - attenuation
+
+Coaxial Cable
+	-	braided outer conductor cancels out the emf
+
+REMEMBER: CHANNEL CAPACITY, BANDWIDTH, LATENCY, transmit data by modulating a signal
+
+Fiber Optics
+	-	has total internal reflection
+	-	multimode and single mode
+		-	how good it is at transmitting the light without a lot of bouncing
+	-	Networks - need to divide up the signal
+		-	multiplexing - give each person a subpart of a frequency range for the wire
+
+Radio transmission
+
+Lightwave Transmission
+	-	laser link
+
+Bandwitdth-Limited Signals
+	-	encoding, link-to-link framing
+	-	FDM vs TDM
+	-	encoding and modulation at high speed
+
+KNOW THE FIRST CHAPTER MATERIAL
