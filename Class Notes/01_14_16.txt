@@ -1,0 +1,139 @@
+01_14_16.txt
+COEN 146 Networks
+
+Communication Satellites
+
+VSAT - Very small atmosphere transmission
+	-	bounce signals
+
+	-	Iridium, Globalstar
+
+Modems
+	-	modulate and demodulate a signal
+	-	amplitude, frequency, phase
+
+Perspectives on Connection
+	-	store and forward (routers)
+
+Link Capacity and Shannon-hartley Theorem
+	-	gives upper bound to the capacity of a link in ters of bits per second
+	-	how you represent the data changes this
+	-	properties of the medium
+	-	signal to noise ratio
+
+Links
+	-	some form of electromagnetic radiation propagating through a medium (or free space)
+	-	electromagnetic spectrum
+		-	don't want signals to go through things
+			-	like gamma rays
+
+Encodeing
+	-	Problem with NRZ
+		-	Baseline wander
+			-	deals with how we represent the signal itself
+			-	The receiver keeps an average of the signals it has seen so far
+			-	Uses teh average to distinguish between low and high signal
+			-	when a signal is significantly lower than the average, it is 0, else it is 1
+			-	too many consecutive 0's and 1's cause this average to change, making it difficult to detect
+		-	Clock Recovery
+			- 	01 = 0
+			-	10 = 1
+			-	avoid 11 or 00
+		-	NRZI
+			-	non return to zero inverted
+				-	solves all consecutive 1's
+				-	doesn't solve all consecutive 0's
+				-	sender makes a transition from the current signal to encode 1 and stay at the current signal to encode 0
+		-	Manchester encoding
+			-	merging clock with signal by transmitting XOR of the NRZ encoded data and the clock
+			-	clock is an internal signal that alternates from high to low
+			-	guarenteed to always transition
+			-	never stay at the same state
+			-	helps get timing correct. Won't go more than 2 clock cycles to tell you where you're at
+			-	manchester bit rate is half the baud rate
+			-	doubles the rate at which the signal transitions are made on the link
+				-	receiver has half of teh time to detect each pulse of the signal
+		-	4B/5B encoding
+			-	insert extra bits into stream to break up the long sequence of 0's and 1's
+			-	every 4-bits of actual data are encoded in a 5-bit code that is transmitted to the receiver
+			-	5-bit codes are selected in such a way that none has more than one leading 0 and no more than 2 trailing 0's
+			-	no pair of 5 bit codes results in more than one
+			-	0000 -> 11110	16 left
+				0001 -> 01001	11111 - when the line is idle
+				001 -> 10100
+			-	helps solve framing problem
+Framing
+	-	Recent PPP 
+	-	Flag, Address, Control, Protocol, Payload, Checksum, Flag
+	-	Byte-counting approach
+		-	DDCMP frame format
+	-	Bit-oriented Protocol
+		-	HDLC: High level data link control
+			-	any 5 consecutive 1's include an extra 0
+			-	01111110
+			-	ex
+				5 consecutive 1's
+					-	next bit: 0: stuffed, so discard it
+					-	next bit: 1: either end of teh frame marker or Error has been introduced in the bitstream
+
+					If 0 (01111110) -> end of the frame marker
+					If 1 (01111111) -> error, discard the whole frame
+						-	the receiver needs to wait for the next
+					01111110 before it can start receiving again
+	-	Error detection
+		-	How do we know the data is good? Checksum/hash
+		-	bit errors are introduced into frames
+			-	because of electrical interference and thermal noises
+			-	detecting error, correction error
+			-	2 approaches
+	-	Common technique for detecting transmission error
+		-	CRC (Cyclic Redundancy Check)
+			-	used in HDLC, DDCMP, CSMA/CD, Token Ring
+		-	Other approaches
+			-	Two dimensional parity (BISYNC)
+			-	Checksum (IP)
+		-	Error correction or detection?
+			-	depends
+			-	cost of resending high? correction
+			-	low? resend
+
+Error Detection
+	-	Basic Idea of error detection
+		-	add redundant information to a frame that can be used to determine if errors have been introduced
+		-	send 2: not the same, which is the error?
+		-	so we can know when things go wrong
+
+		-	layer 2 packet
+		-	layer 3 frame
+
+Stop and Wait Protocol
+	-	depend on timeout
+	-	wait for receive response
+	-	but what if acknowledgement didn't get back?
+	-	need sequence numbers
+		-	recognize retransmission
+
+Sliding Window Protocol
+	-	power of 2 number of frames
+
+Encoding vs modulation
+
+What does it take to send a frame of data at the link layer?
+
+How do we manage the data? Sliding window protocol
+
+Link layer only seems valid if it looks like a dedicated link
+	-	need MAC (media access control)
+	-	who gets to talk when it's shared?
+
+READ CHAPTER 1!!!! BRING QUESTIONS!!!
+
+
+Framing
+	-	encode control information
+		-	hash value, header, how much data, etc.
+
+
+Baud 
+	-	rate of sending signal elements
+		-	signal elements - part of the signal that can change
