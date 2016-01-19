@@ -1,0 +1,81 @@
+01_19_16
+COEN 146 Networks
+
+Big channel available
+  - take part of it
+    - multiplexing, arbitration, coordination
+
+  Multiplexing : how we figure out a physical way to subdivide a channel
+  Coordination : when you run out of subdivisions, how do you decide who gets use?
+
+  - time ranges, frequency ranges
+
+Frequency Divisino Multiplexing
+  - the original bandwidths
+  - the bandwidths raised in frequency
+    - possibility of crosstalk at edges
+      - need high pass and low pass filters
+  - the multiplexed channel
+  - wavelength division
+    - but wavelength and frequency are the same
+    - take into account the different attenuation properties
+
+Reliable Transmission
+  - CRC is used to detect errors
+  - some error codes are strong enough ot correct errors
+  - the overhead is typically too high
+  - corrupt frames must be discarded
+  - a link-level protocol that wants to deliver frames reliably mustrecover from these discarded frames.
+  - this is accomplished using a combination of two fundamental mechanisms
+    - acknowledgements and timeouts
+  - Resend frame
+    - need to request a resend
+    - So far, only send with special data
+      - need send, and if problem resend
+      - frame, wait for special signal response,
+  - An Acknoledgement (ACK) is a small control frame that a protocol sends back to its peer saying that it has received the earlier frame.
+    - a control frame is a frame with header only (no data)
+    - the receipt of an acknowledgmenet indicates to the sender of the original frame that its frame was successfully delivered
+    - but this is pretty wasteful
+    - send all data then wait for a response?
+    - Send, resend only what's missing.
+    - but what if the frame is incorrect?
+      - within each frame, checksum
+      - creates a lot of work
+      - want efficiency
+  -  Dynamically choose protocol?
+    - yes, but need a protocol to specify the protocol
+
+Stop and Wait Protocol
+  - ack received before timer epixres
+  - original frame is lost
+  - the ack is lost
+  - the timout fires too soon
+  - remedy still the same
+  - Ack lost or delayed
+    - resend the frame
+    - looks like new data, but it's a duplicate
+
+Selective Repeat
+  - sender window size cannot be more than 1/2 the size of the total size
+  - Sender maintains three variables
+    - Sending Window Size (SWS)
+      - Upper bound on the number of outstanding (unacknowledged) frames that the sender can transmit
+    - Last Acknowledgement Received (LAR)
+      - Sequence number of the last acknowledgement received
+    - Last Frame Sent (LFS)
+      - Sequence number of the last frame sent
+
+Go Back N Protocol
+  - go back to lost frame and resend all after
+
+Sliding Window Protocol
+  - Sender: range of frames to send
+  -
+
+Pure ALOHA
+  - frames transmitted at completely arbitrary times
+  - carrier sense
+  - vulnerable period for small overlaps at the start and end
+
+Channel utilization
