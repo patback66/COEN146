@@ -1,0 +1,4 @@
+Lab1 - Coen146
+real - actual time from start to finish 
+user - time spent in CPU for user space - program you invoked, user side.
+sys - amount of time spent in the CPU for the kernel
