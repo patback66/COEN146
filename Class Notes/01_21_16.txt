@@ -1,0 +1,87 @@
+01_21_16.txt
+COEN 146: Computer Networks
+
+Link Layer
+  - assumes 2 things are already linked and communicating
+    - there should be a physical connection
+
+Frequency Division multiplexing
+Time Division multiplexing
+  - like taking turns
+
+Sliding Window Protocol
+  - potentially slow to send one thing at a time
+  - 3 Roles
+    - Reliable
+    - Preserve the order
+      - each frame has a sequence number
+    - Frame Control
+      - Reciver is able to throttle the sender
+        - keeps the sender from overruning the receiver
+
+Aloha Protocol
+  - send data in short individual packets, fixed sized, burst
+  - Small vulnerable period
+  - Pure vs Slotted aloha
+  - Persistent and nonpersistent CSMA
+    - timer, but also check if somebody is talking before transmitting
+    - don't necessarily try again immediately - flip a coin
+      - if success - try agian
+      - if fail - wait then try
+    - back off a random amount of time and try again
+  -   CSMA/CD
+
+CSMA wtih Collision Detection
+  - send the packet, then see what happens to it
+  - CSMA/CD can be in one of three states: contention, transmission, or idle
+  - Time at risk is not time to transmit
+  - Use a small period to signal intention to transmit
+  - Guarantee no colissions? Add traffic lights
+
+Signal collision
+  - colliding signals corrupt each other
+
+Collision-Free Protocols
+  - bit-map protocol
+  - Contention period
+    - reserve right to transmit in time slot
+
+Adaptive Tree Walk Protocol - don't need to know
+
+Ethernet
+  - Aloha protocol applied to guided medium
+    - can use any frequency
+  - Most successful local are networking tecnology of last 20 years
+  - Developed at Xerox Palo Alto Research Centers (PARC)
+  - Uses CSMA/CD
+    - carrier sense Multiple access with collision detection
+    - media access control
+    - set of nodes send and receive frames over a shared link
+    - Carrier sense means that all nodes can distinguish between an idle and a busy link
+    - exponential backoff if collision
+  - Uses ALOHA (packet radio network) as the root protocol
+  - Dec and Intel join to define 10-Mbps protocol
+  - Formed basis for IEEE 802.3
+  - extened to include 100-Mbps and 1000-Mbps
+    - Fast, gigabit
+  - Can't have more than a certain length - because of latency
+
+Ethernet Frame
+  - Minimum frame size
+    - because of cable length issue
+  - Transceiver and adaptor
+    - old - coax cable with t-connector
+  - Ethernet repeater
+  - Ethernet Hub - hubs connected, connects computers. Then you don't take out the network when you unplug
+  - But might want a switch, not a hub
+
+IEEE 802.11 - Collision Avoidance
+  - Consider: send/receive where nodes overlap with carrier but not each other
+
+MAC Addresses
+  - how do you tell different nodes from each other?
+    - MAC address tells the end address - every physical interface has this
+    - physical address of the card
+    - Every single ethernet card has a unique address
+    - Devices with the same address need  to be on different networks - the adapter just shouldn't see 2 of the same directly connected
+  - Networking: layer 3

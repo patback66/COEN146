@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1453504899 source:/home/maskoken/Dropbox/Documents/COEN146/Labs/Lab2/Server/koken_server.c
+	"stdio.h"
+	"stdlib.h"
+	"strings.h"
+	"sys/types.h"
+	"sys/socket.h"
+	"netinet/in.h"
+	"netdb.h"
+

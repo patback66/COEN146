@@ -1,0 +1,74 @@
+C socket programming
+  - all in C libraries
+
+UDP
+  *- unreliable - no guarantee of delivery
+  - no set path
+  *- connectionless
+  *- less overhead
+
+Client Side
+  - receive hostname as string on command line
+    - get to ip with 'gethostbyname'
+  - initialize sockaddr_in struct
+  - create interface from computer to network
+    - open a socket
+  - read fiel text
+  - send data to server
+
+  struct hostend* server_addr = gethostbyname(argv[1]);
+  //can use localhost or hostname given by terminal
+
+  struct sockaddr_in server;
+  bzero((char*)&server, sizeof(server)); //clear allocated memory with 0's
+  server.sin_family=AF_INET;
+  bcopy((char*)server_addr->h_addr,(char*)server.sin_addr,server_addr->h_length);
+  server.sin_port=htons(#>5000); //pick a number, just needs to be the same on both
+                                //find out what htons does
+  int sockfd = socket(PF_INET, SOCK_DGRAM, 0); //check that the number return > 0
+                                              //returns -1 if can't open the socket
+  int num_bytes=sendto(sockfd, array, 256, 0, (struct sockaddr*)&server, sizeof(server));
+
+Server Side
+  - init sockaddr_in
+  - open a socket
+  - bind socket to addr/port
+  - receive from client
+  - write data to file
+
+  struct sockaddr_in server;
+  bzero((char*)&server, sizeof(server));
+  server.sin_family=AF_INET;
+  server.sin_addr.s_addr=INADDR_ANY; //use default ip address
+                                      //might want to use a dif var name
+  server.sin_port=htons(#>5000);
+  int sockfd = sockfd = socket(PF_INET, SOCK_DGRAM, 0);
+  bind(sockfd (struct sockaddr*)&server, sizeof(server));
+  socklen_t len;
+  int num_bytes=recvfrom(sockfd, array, 257, 0, (struct sockaddr*)&server, &len);
+  //data is stored in the array
+
+  //char arrays the same size on both
+
+
+
+
+
+FILES
+  FILE *fp=fopen(argvp2],"rw");
+
+READ
+  fread(str, 1, 256, fp); //reads 256 bytes of whatever is there, returns it
+  fgets(str, 256, fp); //breaks on a newline
+
+WRITING
+  fwrite(str, 1, 256, fp);
+  fputs(str, fp);
+
+ENDING
+  fclose(fp);
+
+Verify file transfer by timestamps
+Questions
+  - UDP
+  - Functions used
