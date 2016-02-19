@@ -1,0 +1,88 @@
+02_02_16
+COEN 146 Computer Networks
+
+ICMP
+  - Internet Control Messaging Protocol
+  - Layer 3 sort of, but more Layer 4
+    - It's an application, control protocol that manages the layer beneath it
+
+4/5 Encoding
+  - Special Characters -> start/end character, framing
+  - Pass data that isn't interpreted as data
+
+Most important node in a graph?
+  - Look at it's connections -> does it have a lot?
+  - Most amount of reliable connections?
+  - "I am Bob next to Alice"
+  - Distance -> direct or roundabout (but shorter)
+    - But the node needs to know about the path
+
+Routers
+  - can't just broadcast when in doubt
+  - View of who can be reached
+  - Distance Vector routing
+    - problems when a node disappears
+
+Network Graphs
+  D   D,0
+  D   D,0
+      C,2
+  D   D,0
+      C,2
+      E,(C,2),7
+      B,(C,10),15
+      A,10,A
+
+BGP
+  - Border Gateway Protocol
+    - "Neighbors, who do you know?"
+      - Keeps a summary
+  - Trust routers to trust each other
+  - Routing style effects how you trust other routers and data
+
+Link State Routing
+  - Only what you heard firsthand?
+    - Every node say who it can immediately reach, and cost
+      -
+
+Layer 2
+  Distance Vector routing
+    - propagate who you can eventually reach
+    - talk to neighbors about everyone
+  Link State Routing
+    - share beyond immediate neighbors
+    - share only who you can directly reach
+    - talk to everyone only about your immediate neighbors
+
+Building Link State Packets
+  - need to know age of packet
+  - Routing table
+    - decide which outbox to put the packet in
+
+How often should you decide the best route? Very often
+  - Opposite: set in stone, never update
+  - Extreme: every packet
+  - So how often do you calculate the best route?
+
+Basic operation of: Distance Vector Routing, Link state routing
+
+Chapter 3: first 2 sections on switches
+
+Next class: will be a review session
+
+//makeup quiz: can improve quiz 2
+//networks makeup quiz
+//passphrase: networkcosmetics
+
+Wireless vs ethernet
+  - have to worry about people talking over each other
+    - used MAC for ethernet
+  -
+
+RTS vs CTS
+  Request to send
+  Clearance to send
+
+NEXT TUESDAY: MIDTERM
+Really only responsible for sections in weekly readings
+Question: Do I know why?

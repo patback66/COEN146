@@ -1,0 +1,97 @@
+02_02_16
+COEN 146 Computer Networks
+
+Review
+
+What kind of addresses have we seen so far?
+  - MAC Address
+    - Layer 2.5 Medium Access control
+    - Logical
+    - But where is it?
+    - Hex -> 8F:E0:AA:11:48:FE
+      - sets of 8 bits
+  - IP Address
+    - IPV4 127.0.0.1
+      - Max 255, min 0
+      - each 1 byte
+      0.0.0.0 reserved, me
+      255.255.255.255 reserved, broadcast
+        - send network data through protocol stack, get it back
+  - Subnet mask
+    XOR of network address
+    - only 254 class A networks
+      - but not everybody gets 1, so less
+  - NAT -> firewall, not a typical router
+    - routers look at layer 3
+
+Building Link State Packets
+  - a subnet
+  - the link state packets for the subnet
+    [network (source/dest IP)| data]
+    - use subaddresses to indicate where the packet will go
+      - be an apartment complex rather than a house
+      - 127 is a class A
+
+Shouting? Sending a link layer/broadcast frame
+
+ARP (Layer 2) vs DHCP ()
+  - DHCP you broadcast a request, if no response, then send to send to a specific IP (by the router)
+    - give you your IP, DNS, who to talk to
+
+Addresses
+  - vary by layer
+  - some devices lie about those
+
+Material for MT: Up to Link State Routing
+  - sample questions online
+  - Topics will be posted
+
+REVIEW:
+
+Question 1: Cheetahs
+  bandwidth of n cheetahs. Need to know the distance still
+  speed only tells propagation delay
+  Distance d (miles) then d/60 hours is time it takes to get there
+  T = (D/60)hrs
+  n * 30,000/D GB/hr
+  SANITY CHECK: UNITS -> value of data/time
+
+  -- Data Rate
+  -- Channel Capacity
+  -- Propagation Delay
+
+Question 4: leaving as a variable is fine
+  Data carrying capacity of 300 Hz? can't really say easily
+    - but there is a fixed capacity
+    - you can ask if you need a value, as long as it isn't core to answering the question
+    - when in doubt, variables are fine
+      -
+  10^6 bytes per frame
+  Bytes/s accross a telephone line?
+  Bandwidth = B
+  10^6 * B
+
+Question 8
+  Hamming distance -> # bits difference in representation
+    number of bits difference from one to another
+  4b vs 5b
+  how much room do you have between individual representations of values
+  How many bits can go bad and you can be sure of what is sent
+  Important for checksums, frame control, error correction
+  LOOK AT FRAMING AND PACKING
+
+  Encoding
+    8 1's is a 1
+    hamming distance between any 2 values is an 8
+    less distance less reliable
+
+    Checksum went bad? doesn't matter -> something went bad
+      very unlikely, but checksum checks out, data is corrupted perfectly (almost immpossible)
+
+Framing
+  - resends
+    - go back n
+      - Didn't get 2? get 2 3 4 5
+      - no such ambiguity -> go back to, send everything after
+
+Review session: Saturday Afternoon

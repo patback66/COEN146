@@ -1,0 +1,40 @@
+EXTENSION OF LAB 3
+
+Client
+------
+send data to server
+receive data from the server
+check for sequence & checksum
+  T: send next
+  F: resend last
+
+
+Server
+------
+receive data from client
+check for sequence & checksum
+  T:  modify the packet according to assignment description {print}
+  F:  Do not modify the packet, toupper()
+send data
+
+
+Should be using structs
+  change input type to struct, different size
+
+struct packet {
+  unsigned short seq;
+  unsigned short checksum;
+  char msg[64];
+};
+
+struct packet p;
+p.checksum=17;
+
+can use predefined strings -> 1 string per packet, send 5 separate packets
+char *msgs[5] = {"1", "2", "3", "4", "5"};
+
+sizeof(struct packet)
+
+TEASER: IS sizeof(struct_)==sizeof(sturct_*)
+
+How would you get the address of the third struct in an array of structs?

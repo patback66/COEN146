@@ -1,0 +1,48 @@
+client
+------
+gethostbyname
+init sockaddr_in
+create socket
+forever loop{
+  read from stdin
+  send msg
+  receive msg
+  print msg received
+}
+close(sock) //return value from socket call
+
+server
+------
+init sockaddr_in
+create socket
+bind socket
+forever loop {
+  receive msg
+  printfread from stdin
+  snd msg
+}
+close(sock) //return value from socket cal
+
+Create a socket? need to close a socket
+
+socklen_t len  = sizeof(STruct sockaddr_in)
+
+Questions:
+  What is UDP?
+    3 Characteristics
+    *- unreliable - no guarantee of delivery
+    - no set path
+    *- connectionless
+    *- less overhead
+  What is a socket?
+    IP+port number
+      - port number is where the programs are told ot listen
+    Place for interprocess communication
+  What two pieces of information do you need to send data to the server?
+    IP+
+  Why do we need them?
+    need to know where to send the message, where to listen
+
+
+Perror("Bind Error");
+  >bind Error:

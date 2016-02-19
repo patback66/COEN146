@@ -1,0 +1,107 @@
+02_11_16
+COEN 146 Computer Networks
+
+On the final: probably not comprehensive
+  - but there still will likely be routing
+
+IPv6 Header
+  - addresses are 16 bytes long
+  - 16 byte source address
+
+The IP Protocol
+  - Security
+  - Strict source routing
+  - Loose source routing
+  - Rcord route
+  - Timestamp
+
+Datagram
+
+Hierarchical Routing
+  - hierarchy was intended to be clear
+  - but now we do classless
+    = remember where, and keep track
+
+BUCKETS
+
+Requirements
+  - Reliability
+  - Delay
+  - Jitter
+    = bandwidth fluctuation
+  - Bandwidth
+
+Guaranteeing quality of service
+BUFFERING
+
+Leaky Bucket Algorithm
+  - receive data, put it in a buffer, deliver at a fixed rate
+  - Sliding window protocol could help with this
+    = But IP doesn't care about reliability
+  - Load sharing
+  -
+
+Token Bucket Algorithm
+  - Token for certain volume of data, never will be given more than capacity
+    = give tokens at fixed rate
+    = rate of data represented by tokens
+  - Transmit data as long as you have a token
+  - Token -> average you want to receive at, but can drop below a little bit
+
+Admission control
+  * Token bucket rate
+  * Token bucket size
+  * Peak data rate
+  - Minimum packet size
+  - Maximum packet size
+
+Network performance
+  - Rate of data sent vs rate of subnet (has a max)
+  - Theoretical: want ramp up to max, then hold at max
+  - Hopeful: approach max, probably stay slightly under
+
+Congestion
+  - when too much traffic is offered, congestion sets in and performance degrades sharply
+
+General Principles of Congestion control
+  - MOnitor the system
+    = detect when and where congestion occurs
+  - Pass information to where action can be taken
+  - Adjust network parameters
+
+Congestion Prevention Policies
+  - Transport
+    = Retransmission policy
+    = Out-of-order caching policy
+    - Acknowledgement policy
+    - Flow control policy
+    - Timeout determination
+  - Network
+    = Virtual circuits versus datagram inside the subnet
+    = Packet queueing and service policy
+    = Packet disregard policy
+    = Routing algorithm
+    = Packet lifetime management
+  - Data link
+    = Retransmission policy
+    = Out-of-order caching policy
+    = Acknowledgement policy
+    = Flow control policy
+
+Congestion Control in Virtual-Circuit Subnets
+
+UDP
+
+TCP
+  - end-to-end -> flow control, quality control, error correction/detection
+
+What does a router do?
+  - Find appropriate recipient for packet
+  - Scheduling algorithm? It depends, but FIFO works well
+
+Packet Scheduling
+  - Round robin
+  - Shortest packet first, with a round robin twist
+    = WON'T CAUSE STARVATION
+    = Maximises throughput going out
+    

@@ -1,0 +1,47 @@
+01_26_16
+COEN 146
+
+Sharing a shared medium
+
+Switch vs hub
+  - connect multiple ethernet devices
+  - switch is active
+    - less sharing
+    - pretend to be a hub, but smarter
+  - hub is passive
+
+The 802.11 MAC Sublayer Protocol
+
+Ethernet MAC Sublayer Protocol
+  - Frame formats
+    - DIX Ethernet
+    - IEEE 802.3
+  - Why padding?
+    - guarantee a minimum frame size
+    - Collision detection
+
+Switched Ethernet
+  - What if you connect two switches?
+    - Two separate networks taht need to be connected by something smart?
+    - Internetworking
+
+IEEE 802.2: Logical Link Control
+  - Position of LLC
+    - Network Layer <-> LLC, MAC <-> Physical Layer
+  - Protocol Formats
+    - Packet <-> LLC/Packet, MAC/LLC/Packet/MAC <->Network
+
+Topology
+  - Star
+  - Bus
+  - FDDI -> Ring
+    - Token ring network
+    - ATM -> asynchronous transfer
+  - Logically the same, physically very different
+
+D.A.G.
+  - Directed acyclical graph
+
+Channel Capacity
+  - maximum amount of data that can be in flight at any time
+  - prop delay * amount of data

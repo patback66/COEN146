@@ -1,0 +1,79 @@
+01_28_16
+COEN 146 Networks
+
+Logically, where are people?
+  - Concerned with network layer 3
+  - Tell your neighbors where you are. They tell their neighbors where you are
+    - spreading rumors
+
+Routing
+  - Done by a router
+  - Metric of relative goodness of neighbors
+
+Distance Vector Routing
+
+Network Layer Design Issues
+  - store and forward packet switching
+  - Services Provided to the transport layer
+  - Implementation of connectionless service
+  - Implementation of connection-oriented service
+  - Comparison of virtual-circuit and datagram subnets
+
+Store and Forward Packet Switching
+  -
+
+Implementation of Connectionless Service
+  - Routing with a datagram subnet
+
+Implementation of Connection-Oriented Service
+  - Routing within a virtual-circuit subnet
+  - Separate circuits may contain the same path
+
+Comparison of Virtual Circuit and Datagram
+  - Datagram network must contain full address
+
+Amount of data to implement an algorithm
+  - amount of data to share/propagate/who to send to
+  - amount of data you need to maintain
+  - DON'T USE NEGATIVE DISTANCES
+
+Routing Algorithms
+  - Optimality Principle
+  - Shortest Path Routing
+  - Flooding
+
+Flooding
+  - Tell neighbors, have them tell their neighbors
+  - Tell the world
+    - the world tells the world, remembers that they did so so that they don't send it again
+  - Keep your own graph (that would be really hard)
+    - Routing tables are network addresses, ranges - not system addresses
+  - Tricky, lots of traffic
+
+The Optimality Principle
+  - A subnet vs A sink tree
+    - tree that can reach every node in the graph without a cycle
+      - Want to build a spanning tree - reach all nodes, but each has least weight across all edges - minimum spanning tree
+      - reach every node with shortest possible path
+        - requires to start with the full knowledge of the network
+      - Sink tree
+
+Distance Vector Routing
+  - See how long it takes for them to reply
+  - Fatal Flaw
+    - When somebody disappears, then issues arise
+  - BGP (Border Gateway Protocol)
+    - form of Distance Vector routing
+    - Instead of maintaining a table of hops, you list the path as well
+    - Used on higher layer, between networks that don't have to trust each other
+
+
+    THurday week 5
+    tuesday/thursday week 6
+
+Midterm
+  - few questions like quiz
+  - problems to work out
+  - there will be a review session
+    - there will be sample questions
+    - don't memorize names, but understand algorithm/approach/reasoning why 
