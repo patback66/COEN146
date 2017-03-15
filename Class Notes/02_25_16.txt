@@ -1,0 +1,59 @@
+02_25_16
+COEN 146 Computer Networks
+
+Phishing
+
+Security - how do you know you're at the correct site?
+
+Forwarding (from the router/to DNS - not the DNS you wanted)
+
+Man in the middle attack
+
+Application Level Encryption
+
+Attacks and security can be applied at many different layers
+
+Assured Forwarding
+  - queued packets have a priority
+
+Expedited Forwarding
+  - Expedited packets have a traffic - free network
+
+  Frame
+  [PPP | IP | UDP/TCP unit]
+
+Label Switching and MPLS
+  - link layer protocol
+  - Transmitting a TCP segment using IP, MPLS, and PPP
+  - MAC allows you to add extra stuff
+
+The DNS Name Space
+  - DNS holds resource records -> database service
+
+Resource Records
+  - Information about the hosts, etc that you want to connect to
+  - Help with load balancing
+
+Name Servers
+  - How a resolver looks up a remote name
+    = Recursive lookup
+    = Iterative lookup
+  - Generic vs countries
+
+"micorsoft.com"
+
+Certificates
+  - secure hash is like a checksum
+  - public key
+  - verify the file is true - public/private key
+
+Required to know
+  - hierarchical
+  - 2 forms of lookup -> result of hierarchical namespace
+  - top level is special
+    = delegate to subdomain
+  - expensive to add top level domain -> needs infrastructure
+  - protocol at the application layer -> many things built on top
+    = security guarantees
+
+  

@@ -1,0 +1,73 @@
+02_23_16
+COEN 146 Computer Networks
+
+TCP
+
+Destination: IP address
+  - IPV4, layer 3 address
+  - MAC address: multiple parties sharing the same link
+
+
+  3 - Packet
+  2 Frame
+                        [HDR|         ]
+  Packet ->         [HDR| Payload     ]
+  Frame  -> [ | MAC | Payload/Data    | ]
+
+7 Application Layer
+6 Presentation Layer*
+5 Session Layer*
+4 Transport
+3 Network
+2 Link
+1 Physical
+
+TCP is a layer of software that accepts packets and interprets packets as a chunk of data
+that will be handed off to a process
+
+UDP/TCP
+  IP
+  ETHERNET
+
+Handle congestion, reliability
+  - sender window/receiver window
+  -
+
+Receive window size n vs size 1
+
+Transport is the first time we see a process speaking to a process -> encryption at layer 4+
+
+TCP Congestion control
+
+TCP Timer Management
+  - AVERAGE
+  - Delays may be caused by smaller packet sizes
+  - Response times can be dramatically affected -> greater uncertainty is bad
+
+Performance Problems in Computer Networks
+
+Network performance measurement
+  - Measure what you care about
+  - Adjust the parameter you can change
+  - The basic loop for improving network performance
+  1)  Measure relevant network parameters, performance
+  2)  Try to understand what is going on
+  3)  Test again
+
+System Design for better performance
+  - Rules
+  1)  CPU speed is more important than network speed
+  2)  Reduce packet count to reduce software overhead
+  3)  Minimize context switches
+  4)  Minimize copying
+  5)  You can buy more bandwidth but not lower delay
+  6)  Avoiding congestion is better than recovering from it
+  7)  Avoid timeouts
+  - Avoid diminishing returns
+
+Resends/timeouts
+
+Next class:
+  - Application layer
+    = How does DNS scale
+  - Security issues 

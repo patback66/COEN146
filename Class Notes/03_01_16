@@ -1,0 +1,79 @@
+03_01_16
+COEN 146 Computer Networks
+
+Security
+  - Physical attack - cut the cables and splice yourself in
+  - WiFi - encryption... - WEP, WPA
+  - Expecting nobody is watching the programs running
+
+Sign it twice -> RSA, public/private keys
+
+Line slope -> need two numbers y = ax + b
+
+Split a secret among multiple people
+  - Secret splitting
+  - Establish a minimum number of people to disclose a secret
+
+How do you encrypt data
+  - code is no good if it preserves structure or its key is easy to guess
+  - caeser
+  - Vignere -> but dictionary attack
+  - Weakness in implementation
+
+Security to know:
+  - 4 Concepts/tools
+    1)  symmetric key encryption
+      - employ a secret that must be shared
+    2)  Public key - Encryption
+      - what one key does, the other undoes
+      - encrypt with private, decrypt with public
+    3)  Hashing -> checksum
+      - difficulty of guesing data that will produce a specific value
+      - want to fulfill a strong property -> MD5, SHA-1 fail
+        = Strong: is it possible (in a reasonable amount of time) to find two values that create the same hash
+    4) Private Key Encryption
+
+How do you exchange a secret in full view?
+
+Digital signature
+  - My name is x, guaranteed by y -> signed by somebody you trust
+
+Authentication Based on a Shared Secret Key
+  - two-way authentication using a challenge-response protocol
+  - random challenges -> avoid, use single message
+
+Reflection Attack
+  - Trudy (as alice): "I'm Alice, random number from Trudy"
+  - Bob: "Random from bob. I'm Bob. random from Trudy"
+  - Trudy doesn't answer, new connection as trudy
+  - Trudy: "Hi I'm trudy, here's a random number I want you to encrypt"
+  - Bob responds
+  - Trudy (as Alice): continue convo -> now trusted because has bob's random
+
+Establishing a Shared Key:
+  - The Diffie-Hellman Key Exchange
+  - alice picks x, bob picks y
+  - Alice: 1 -> n, g, g^x mod n
+  - Bob: 2 -> g^y mod n
+  alice computes (g^y mod n)^x modn = g^xy mod n
+  bob computes (g^x mod n)^y mod n = g^xy mod n
+
+To Know:
+  private key
+  public key
+  secure one way encryption
+  how do you exchange in full view of the world
+
+mechanics of a protocol are just as important (or more) as the power and resilience to attack as encryption algorithm
+
+If your security is comporomised, do you know?
+  Honeypot
+    - do a port scan
+
+Last lab -> diffie-hellman
+blue slides vs red slide -> mostly just using red
+
+BRING IN ANY QUESTIONS ABOUT
+  LAYER 4, Layer 5
+  Congestion control
+  quality of service

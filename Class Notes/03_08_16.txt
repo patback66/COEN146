@@ -1,0 +1,93 @@
+03_08_016
+COEN 146 Computer Networks
+
+Feat. Alice and Bob
+
+Malorie(Malware, Manipulator, Man in the middle, malloc,etc) and Eve(Eavesdropper)
+Chuck (Check stuff), Catherine
+
+DIFFIE-HELMAN
+
+What do we need to know? Specific Algorithms (that aren't so specific)
+Detailed material you need to know
+  - reading material
+    = no specific algorithm
+
+Why not asked to memorize?
+  Technology keeps changing
+
+How does it work?
+Why does it work?
+When does it work?
+
+Chapter 8
+
+Key Pre Distribution
+  - Pre-Distribution of Symmetric keys
+    = Authentication Protocols
+    = Like challenge-response protocol
+    = Prove you are bob, give secret key
+    = Timestamp -> prove it's a current message, not old
+  - Public-key authentication protocol that depends on synchronization
+  - Sliding window protocols -> get a missing packet
+  - A public-key authentication protocol that does not
+      = send your clock time
+  - The Needham-Schroeder authentication protocol
+    = Key, but also identity. Only works for Alice
+    = send back slightly different message -> decrypted & read, now send n+1
+    = Now Alice knows Bob is Bob and Bob knows Alice is Alice.
+  - Diffie-hellman key Agreement
+    = exchange primes
+    = g^ab mod p = (g^b mod p)^a
+    = g^ba mod p = (g^a mod p)^b
+
+Session Keys
+  - don't want somebody to have possession of encrypted key for a long amount of time
+  - prevent brute force
+
+Pre-Distribution of Symmetric keys
+  - Man-in-the-middle attack
+  - Inserted into a handshake that is vulnerable
+  - Establish secure connections
+
+PGP - Pretty good privacy
+  - Sign using Alice's private key
+  - Encrypt using a newly generate one-time session key
+  - Encrypt the session key using
+
+Example Systems
+  -Secure Shell (SSH)
+    = Automated challenge-response
+    = SSH often takes the place of the secure layer (that doesn't exist)
+    = TCP Tunneling, port forwarding
+    = almost like having a vpn
+  - Transport Layer Security (TLS, SSL, HTTPS)
+    = handshake protocol
+
+
+Reflection attack
+
+Security material
+  - one-way hashes
+  - public key encryption vs symmetric key encryption
+  - how to do handshakes (more than just challenge/response)
+  - attacks: reflection, mitm, replay
+    = time and nonces to avoid replay
+
+If presented with description:
+  Why use it?
+  What does it do?
+
+
+Coverage for final
+  10-15 sample posted today
+  Quiz 5
+
+Final is not comprehensive: starts with second part of routing
+  - around link-state on
+    = didn't cover mobile ad-hoc networks
+    = 2nd half layer 3 up
+
+quiz access code: timing
+
+latency doesn't really go away (apart from quantum level stuff)

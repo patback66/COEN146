@@ -1,1 +1,27 @@
 COEN 146 Lab 5
+
+Random byte generator
+  - print to standard out -> character
+  - byte has 8 bits of representation
+  - characters are signed
+  --> use unsigned chars
+  printf("%c", value);
+  ./randgenerator <size> | head ...| ./entropyCalc
+                                  > test
+
+Entropy calculator
+  - Cisco code
+    -> 1st 2 are one block
+    -> 3rd is separate
+
+  READ AS unsigned
+
+Entropy:
+  7.999
+  7.9999
+  8 is ideal
+
+Writeup
+  1)  measurements for 3 different file sizes (random gen)
+  2)  masurements from 3 different sample files (3 different file types) -> keep constant file size
+  3)  Discuss the results and provide explanation of our random byte generator

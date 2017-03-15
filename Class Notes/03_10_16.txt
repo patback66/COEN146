@@ -1,0 +1,154 @@
+03_10_16
+COEN 146 Computer Networks
+
+NO MORE NEW MATERIAL
+
+Final: Thursday 9:10
+What material?
+  - Link-state routing forward
+
+
+Best route?
+  - It depends
+  - Traffic
+  - Location changes -> nodes move
+  - Could calculate the cheapest route, but have to discover it first
+
+Sections
+  NOTHING BEFORE CHAPTER 3
+  Congestion Control
+  TCP
+    - change how fast it's speeding up, etc.
+    - how fast (on average) you're sending data
+    - max rate of transmission
+    - TCP Segments -> chunks of data
+  Chapter 4
+    3.3.3, 3.3.4 *Most important
+    3.4.4 *Strongly recommended
+      - Implementation
+    3.3,3.4 general awareness
+  Chapter 4
+    Routing algorithms
+    4.1.1 bare minimum
+    4.1.2 recommended
+      Distance vector like algorithm
+    4.1 overall, but 4.1.1 is the focus
+  Chapter 5
+    5.1,5.2 required
+    5.4.2 helpful
+  Chapter 6
+    6.1.1,6.1.2,6.1.3
+    Grasp of congestion control
+    responsible for general idea of the algorithms
+
+    congestion low, increase segment size. high, decrease
+    Leaky bucket
+    Packet queueing
+      Queue you place the packet on?
+        routing algorithm
+      Which packet goes out next?
+        queuing algorithm
+        route trees
+        shortest remaining time
+        round robin
+    6.2
+      feels like layer 3 again-
+    6.1-6.3
+    6.4,6.5 recommended
+    6.5.2 very strongly recommended
+      RSVP - reserve bandwidth
+  Chapter 8
+    8.3.4 (Diffie-Helman key exchange)
+      establish a secret between people who are speaking in the open
+    8.4.1 (PGP)
+    secure one way hashes
+    public key encryption
+    private key encryption
+    token exchanges
+
+    authentication protocols
+    attacks: why we predistribute keys
+  Chapter 9
+    DNS
+      recursive vs iterative lookups
+    9.3.1
+
+Review session: Tuesday probably later afternoon
+  BRING QUESTIONS
+
+Size: same as midterm
+Full exam time will be available
+Assumptions: STATE THEM
+
+Security
+  Reflection attack
+    - Initial key exchange - impose yourself
+    - challenge -> cryptographic secret
+    - Prove yourself -> here's a random challenge. Ok, we'll get to that. I challenge you a random challenge
+      = Piggybacking the challenge on the initial challenge
+  What is a challenge? Purpose?
+    - people communicating, need to verify they are who they are
+  Clock
+
+Question 4: Window size in TCP?
+  ALL THE WINDOW SIZES
+  Congestion: how much data willing to transmit based on perceived congestion (which varies)
+    - + traffic, - window; - traffic, + window;
+
+Question 3:
+  not in direct contact with sender
+  I'm being overwhelmed by this link, so choke packets -> say to slow down
+  Follow the path
+
+  Network vs transport layer
+  ex: IP datagram vs tcp at transport layer
+                      receiver noticing congestion could say slow down
+                      sender itself sees it is timing out, slows down
+                      sender/receiver
+      hop by hop
+
+      source - throttle
+      Who has the power to stop sending data? Everyone
+        - routers rarely originate data
+        - network card doesn't always have a say in the frames its sending
+          = more limited scope of limiting itself
+
+Token Bucket
+
+Expedited Forwarding
+  - experience a traffic-free network
+
+Assured Forwarding
+  - Kind of like priority scheduling
+  - empty highest priority queue first
+
+Label Switching and MPLS
+  - Frame headers, etc. payload
+  - TCP segment using IP, MPLS, and PPP
+  - packet labeling system
+
+Leaky Bucket
+  - problematic, not using the link well - prevent from exceding certain max
+
+Token Bucket
+  - instantaneous rate doesn't matter
+  - just don't excede a certain average/range
+  - generate token - available number
+  - token bucket can go into leaky bucket
+    = prevents a flood
+
+TCP vs UDP
+  - how much detail
+  - difference in headers
+  - need to be able to explain what the headers contain (if shown)
+  - differences between the two
+    = TCP has lots of metadata
+    = UDP has ports, and that's it
+  - what the header stuff does
+
+Easier to say goodbye or hello?
+  - clean termination can be difficult
+
+Handshakes?
+
+IP connectionless
